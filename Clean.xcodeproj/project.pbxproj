@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90000092A9D15AC0071F48C /* Extensions+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90000082A9D15AC0071F48C /* Extensions+Helpers.swift */; };
 		A902CC082A9BB25D00C3858F /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = A902CC072A9BB25D00C3858F /* Domain.docc */; };
 		A902CC0E2A9BB32F00C3858F /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC0D2A9BB32F00C3858F /* AddAccount.swift */; };
 		A902CC102A9BB50A00C3858F /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC0F2A9BB50A00C3858F /* AccountModel.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A90000082A9D15AC0071F48C /* Extensions+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Helpers.swift"; sourceTree = "<group>"; };
 		A902CC042A9BB25D00C3858F /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A902CC072A9BB25D00C3858F /* Domain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domain.docc; sourceTree = "<group>"; };
 		A902CC0D2A9BB32F00C3858F /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90000072A9D159B0071F48C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A90000082A9D15AC0071F48C /* Extensions+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A902CBE92A9BB13700C3858F = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A902CC192A9BB56D00C3858F /* Data.docc */,
+				A90000072A9D159B0071F48C /* Helpers */,
 				A902CC3D2A9BDEF600C3858F /* UseCases */,
 				A902CC3E2A9BDF0A00C3858F /* Http */,
 			);
@@ -364,6 +375,7 @@
 				A9B1A1CC2A9CEA00000CAE69 /* HttpError.swift in Sources */,
 				A902CC1A2A9BB56D00C3858F /* Data.docc in Sources */,
 				A902CC382A9BDE2D00C3858F /* HttpPostClient.swift in Sources */,
+				A90000092A9D15AC0071F48C /* Extensions+Helpers.swift in Sources */,
 				A902CC362A9BDC8100C3858F /* RemoteAddAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
