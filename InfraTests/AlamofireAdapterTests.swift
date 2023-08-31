@@ -25,13 +25,10 @@ class AlamofireAdapter {
     }
 }
 
-final class InfraTests: XCTestCase {
+final class AlamofireAdapterTests: XCTestCase {
     
     func test_post_should_make_request_with_valid_url_and_method() {
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = Session(configuration: configuration)
-        let sut = AlamofireAdapter(session: session)
+        let sut = makeSut()
         let url = makeURL()
         sut.post(to: url, with: makeValidData())
         let expectation = expectation(description: "waiting")
@@ -45,15 +42,10 @@ final class InfraTests: XCTestCase {
     }
     
     func test_post_should_make_request_with_no_data() {
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [URLProtocolStub.self]
-        let session = Session(configuration: configuration)
-        let sut = AlamofireAdapter(session: session)
-        let url = makeURL()
-        sut.post(to: url, with: nil)
+        let sut = makeSut()
+        sut.post(to: makeURL(), with: nil)
         let expectation = expectation(description: "waiting")
         URLProtocolStub.observeRequest { request in
-            XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNil(request.httpBodyStream)
             expectation.fulfill()
@@ -62,6 +54,17 @@ final class InfraTests: XCTestCase {
     }
 }
 
+// MARK: - Extensions
+
+extension AlamofireAdapterTests {
+    
+    func makeSut() -> AlamofireAdapter {
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = Session(configuration: configuration)
+        return AlamofireAdapter(session: session)
+    }
+}
 
 class URLProtocolStub: URLProtocol {
     static var emit: ((URLRequest) -> Void)?
