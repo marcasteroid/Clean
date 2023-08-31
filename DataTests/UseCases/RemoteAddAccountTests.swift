@@ -65,18 +65,6 @@ extension RemoteAddAccountTests {
         return AddAccountModel(name: "name", email: "email", password: "password", passwordConfirmation: "password")
     }
     
-    func makeAccountModel() -> AccountModel {
-        return AccountModel(id: "id", name: "name", email: "email", password: "password")
-    }
-    
-    func makeURL() -> URL {
-        return URL(string: "http://url.com")!
-    }
-    
-    func makeInvalidData() -> Data {
-        return Data("invalidData".utf8)
-    }
-    
     func makeSut(url: URL = URL(string: "http://url.com")!,
                  file: StaticString = #file,
                  line: UInt = #line) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy) {
@@ -85,14 +73,6 @@ extension RemoteAddAccountTests {
         checkMemoryLeak(for: httpClientSpy, file: file, line: line)
         checkMemoryLeak(for: sut, file: file, line: line)
         return (sut, httpClientSpy)
-    }
-    
-    func checkMemoryLeak(for instance: AnyObject,
-                         file: StaticString = #file,
-                         line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
     }
     
     func expect(_ sut: RemoteAddAccount,
@@ -114,25 +94,5 @@ extension RemoteAddAccountTests {
         }
         action()
         wait(for: [expectation], timeout: 1)
-    }
-    
-    class HttpClientSpy: HttpPostClient {
-        var urls = [URL]()
-        var data: Data?
-        var completion: ((Result<Data, HttpError>) -> Void)?
-        
-        func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void) {
-            self.urls.append(url)
-            self.data = data
-            self.completion = completion
-        }
-        
-        func completeWithError(_ error: HttpError) {
-            completion?(.failure(error))
-        }
-        
-        func completeWithData(_ data: Data) {
-            completion?(.success(data))
-        }
     }
 }

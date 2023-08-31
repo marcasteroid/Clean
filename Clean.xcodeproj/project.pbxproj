@@ -19,6 +19,10 @@
 		A902CC342A9BDBE600C3858F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC332A9BDBE600C3858F /* Model.swift */; };
 		A902CC362A9BDC8100C3858F /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC352A9BDC8100C3858F /* RemoteAddAccount.swift */; };
 		A902CC382A9BDE2D00C3858F /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC372A9BDE2D00C3858F /* HttpPostClient.swift */; };
+		A95B2CEF2AA0680800F9DAFE /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */; };
+		A95B2CF12AA0689300F9DAFE /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF02AA0689300F9DAFE /* TestFactories.swift */; };
+		A95B2CF42AA0692300F9DAFE /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF32AA0692300F9DAFE /* HttpClientSpy.swift */; };
+		A95B2CF62AA0697300F9DAFE /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF52AA0697300F9DAFE /* AccountModelFactory.swift */; };
 		A9B1A1CA2A9CE6D9000CAE69 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1A1C92A9CE6D9000CAE69 /* DomainError.swift */; };
 		A9B1A1CC2A9CEA00000CAE69 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1A1CB2A9CEA00000CAE69 /* HttpError.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +71,10 @@
 		A902CC332A9BDBE600C3858F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A902CC352A9BDC8100C3858F /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		A902CC372A9BDE2D00C3858F /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		A95B2CF02AA0689300F9DAFE /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		A95B2CF32AA0692300F9DAFE /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
+		A95B2CF52AA0697300F9DAFE /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 		A9B1A1C92A9CE6D9000CAE69 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		A9B1A1CB2A9CEA00000CAE69 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +160,8 @@
 		A902CC232A9BB56E00C3858F /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				A95B2CF22AA0690200F9DAFE /* Http */,
+				A95B2CED2AA067FA00F9DAFE /* Helpers */,
 				A902CC3F2A9BDF1D00C3858F /* UseCases */,
 			);
 			path = DataTests;
@@ -204,6 +214,24 @@
 				A902CC242A9BB56E00C3858F /* RemoteAddAccountTests.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		A95B2CED2AA067FA00F9DAFE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */,
+				A95B2CF02AA0689300F9DAFE /* TestFactories.swift */,
+				A95B2CF52AA0697300F9DAFE /* AccountModelFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A95B2CF22AA0690200F9DAFE /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				A95B2CF32AA0692300F9DAFE /* HttpClientSpy.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		A9B1A1C82A9CE6BF000CAE69 /* Errors */ = {
@@ -384,7 +412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95B2CF12AA0689300F9DAFE /* TestFactories.swift in Sources */,
+				A95B2CF42AA0692300F9DAFE /* HttpClientSpy.swift in Sources */,
 				A902CC252A9BB56E00C3858F /* RemoteAddAccountTests.swift in Sources */,
+				A95B2CF62AA0697300F9DAFE /* AccountModelFactory.swift in Sources */,
+				A95B2CEF2AA0680800F9DAFE /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
