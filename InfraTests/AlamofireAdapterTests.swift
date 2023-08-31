@@ -53,9 +53,9 @@ final class AlamofireAdapterTests: XCTestCase {
     
     func test_post_should_complete_with_error_on_all_invalid_cases() {
         expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: makeHTTPResponse(), error: makeError()))
+        expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: makeError()))
         expectResult(.failure(.noConnectivity), when: (data: makeValidData(), response: nil, error: nil))
         expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHTTPResponse(), error: makeError()))
-        expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHTTPResponse(), error: nil))
         expectResult(.failure(.noConnectivity), when: (data: nil, response: makeHTTPResponse(), error: nil))
         expectResult(.failure(.noConnectivity), when: (data: nil, response: nil, error: nil))
     }
