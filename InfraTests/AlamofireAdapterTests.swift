@@ -28,29 +28,18 @@ class AlamofireAdapter {
 final class AlamofireAdapterTests: XCTestCase {
     
     func test_post_should_make_request_with_valid_url_and_method() {
-        let sut = makeSut()
         let url = makeURL()
-        sut.post(to: url, with: makeValidData())
-        let expectation = expectation(description: "waiting")
-        URLProtocolStub.observeRequest { request in
+        testRequestFor(url: url, data: makeValidData()) { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNotNil(request.httpBodyStream)
-            expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 1)
     }
     
     func test_post_should_make_request_with_no_data() {
-        let sut = makeSut()
-        sut.post(to: makeURL(), with: nil)
-        let expectation = expectation(description: "waiting")
-        URLProtocolStub.observeRequest { request in
-            XCTAssertEqual("POST", request.httpMethod)
+        testRequestFor(data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
-            expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 1)
     }
 }
 
@@ -63,6 +52,17 @@ extension AlamofireAdapterTests {
         configuration.protocolClasses = [URLProtocolStub.self]
         let session = Session(configuration: configuration)
         return AlamofireAdapter(session: session)
+    }
+    
+    func testRequestFor(url: URL = makeURL(), data: Data?, action: @escaping (URLRequest) -> Void) {
+        let sut = makeSut()
+        sut.post(to: url, with: data)
+        let expectation = expectation(description: "waiting")
+        URLProtocolStub.observeRequest { request in
+            action(request)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
     }
 }
 
