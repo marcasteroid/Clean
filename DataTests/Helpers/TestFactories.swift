@@ -15,8 +15,12 @@ func makeInvalidData() -> Data {
     return Data("invalidData".utf8)
 }
 
+func makeEmptyData() -> Data {
+    return Data()
+}
+
 func makeValidData() -> Data {
-    return Data("{\"name\":\"Biscotto\"}".utf8)
+    return Data("{\"name\":\"anyName\"}".utf8)
 }
 
 func makeError() -> Error {
