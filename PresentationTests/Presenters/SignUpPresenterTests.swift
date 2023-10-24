@@ -37,6 +37,13 @@ final class SignUpPresenterTests: XCTestCase {
         sut.signUp(viewModel: signUpViewModel)
         XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Error", message: "Field password confirmation cannot be empty"))
     }
+    
+    func test_signUp_should_show_error_message_if_password_confirmation_not_match() throws {
+        let (sut, alertViewSpy) = makeSut()
+        let signUpViewModel = SignUpViewModel(name: "any_name", email: "any_email@email.com", password: "any_password", passwordConfirmation: "different_password")
+        sut.signUp(viewModel: signUpViewModel)
+        XCTAssertEqual(alertViewSpy.viewModel, AlertViewModel(title: "Error", message: "Password and password confirmation must be equal"))
+    }
 }
 
 extension SignUpPresenterTests {

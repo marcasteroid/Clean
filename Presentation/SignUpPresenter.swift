@@ -29,6 +29,8 @@ public final class SignUpPresenter {
             return "Field password cannot be empty"
         } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
             return "Field password confirmation cannot be empty"
+        } else if viewModel.password != viewModel.passwordConfirmation {
+            return "Password and password confirmation must be equal"
         }
         return nil
     }
