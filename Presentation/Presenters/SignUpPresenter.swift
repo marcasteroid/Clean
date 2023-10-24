@@ -32,7 +32,7 @@ public final class SignUpPresenter {
         } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
             return "Field password confirmation cannot be empty"
         } else if viewModel.password != viewModel.passwordConfirmation {
-            return "Password and password confirmation must be equal"
+            return "Invalid password confirmation"
         }
         if let email = viewModel.email {
             if !emailValidator.isValid(email: email) {
