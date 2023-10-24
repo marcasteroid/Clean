@@ -32,7 +32,6 @@ public final class RemoteAddAccount: AddAccount {
                 case .forbidden:
                     completion(.failure(.emailInUse))
                 default:
-                    debugPrint("[DEBUG]: Error: \(error)")
                     completion(.failure(.unexpected))
                 }
             }

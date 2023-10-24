@@ -29,6 +29,5 @@ final class AddAccountUseCasesIntegrationTests: XCTestCase {
             exp.fulfill()
         }
         wait(for: [exp], timeout: 5)
-    }
-    
+    }    
 }
