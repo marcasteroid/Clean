@@ -15,15 +15,22 @@ class SignUpPresenter {
     }
     
     func signUp(viewModel: SignUpViewModel) {
-        if viewModel.name == nil || viewModel.name!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Field name cannot be empty"))
-        } else if viewModel.email == nil || viewModel.email!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Field email cannot be empty"))
-        } else if viewModel.password == nil || viewModel.password!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Field password cannot be empty"))
-        } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
-            alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Field password confirmation cannot be empty"))
+        if let message = validate(viewModel: viewModel) {
+            alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: message))
         }
+    }
+    
+    private func validate(viewModel: SignUpViewModel) -> String? {
+        if viewModel.name == nil || viewModel.name!.isEmpty {
+            return "Field name cannot be empty"
+        } else if viewModel.email == nil || viewModel.email!.isEmpty {
+            return "Field email cannot be empty"
+        } else if viewModel.password == nil || viewModel.password!.isEmpty {
+            return "Field password cannot be empty"
+        } else if viewModel.passwordConfirmation == nil || viewModel.passwordConfirmation!.isEmpty {
+            return "Field password confirmation cannot be empty"
+        }
+        return nil
     }
 }
 
