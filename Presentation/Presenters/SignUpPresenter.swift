@@ -35,7 +35,9 @@ public final class SignUpPresenter {
             return "Password and password confirmation must be equal"
         }
         if let email = viewModel.email {
-            _ = emailValidator.isValid(email: email)
+            if !emailValidator.isValid(email: email) {
+                return "Invalid email"
+            }
         }
         return nil
     }
