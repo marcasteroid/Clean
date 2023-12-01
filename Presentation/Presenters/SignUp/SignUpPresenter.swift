@@ -25,16 +25,8 @@ public final class SignUpPresenter {
         if let message = validate(viewModel: viewModel) {
             alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: message))
         } else {
-            guard   let name = viewModel.name,
-                    let email = viewModel.email,
-                    let password = viewModel.password,
-                    let passwordConfirmation = viewModel.passwordConfirmation
-            else { return }
-            let addAccountModel = AddAccountModel(name: name,
-                                               email: email,
-                                               password: password,
-                                               passwordConfirmation: passwordConfirmation)
             loadingView.showLoader(viewModel: LoadingViewModel(isLoading: true))
+            guard let addAccountModel = SignUpMapper.toAddAccoutModel(viewModel: viewModel) else { return }
             addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
