@@ -20,6 +20,7 @@
 		A902CC362A9BDC8100C3858F /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC352A9BDC8100C3858F /* RemoteAddAccount.swift */; };
 		A902CC382A9BDE2D00C3858F /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC372A9BDE2D00C3858F /* HttpPostClient.swift */; };
 		A93B58C82B19BCF300526D37 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF52AA0697300F9DAFE /* AccountModelFactory.swift */; };
+		A93B58C92B19D6B500526D37 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */; };
 		A95B2CEF2AA0680800F9DAFE /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */; };
 		A95B2CF12AA0689300F9DAFE /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF02AA0689300F9DAFE /* TestFactories.swift */; };
 		A95B2CF42AA0692300F9DAFE /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF32AA0692300F9DAFE /* HttpClientSpy.swift */; };
@@ -901,6 +902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93B58C82B19BCF300526D37 /* AccountModelFactory.swift in Sources */,
+				A93B58C92B19D6B500526D37 /* TestExtensions.swift in Sources */,
 				A96983CC2AE7C962001F8DA7 /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

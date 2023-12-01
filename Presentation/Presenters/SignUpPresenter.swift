@@ -32,7 +32,8 @@ public final class SignUpPresenter {
                                                email: email,
                                                password: password,
                                                passwordConfirmation: passwordConfirmation)
-            addAccount.add(addAccountModel: addAccountModel) { result in
+            addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .failure: self.alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Please try again later"))
                 case .success: break
