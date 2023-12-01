@@ -39,7 +39,7 @@ public final class SignUpPresenter {
                 guard let self = self else { return }
                 switch result {
                 case .failure: self.alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Please try again later"))
-                case .success: break
+                case .success: self.alertView.showMessage(viewModel: AlertViewModel(title: "Success", message: "Account added successfully"))
                 }
                 self.loadingView.showLoader(viewModel: LoadingViewModel(isLoading: false))
             }
