@@ -32,7 +32,12 @@ public final class SignUpPresenter {
                                                email: email,
                                                password: password,
                                                passwordConfirmation: passwordConfirmation)
-            addAccount.add(addAccountModel: addAccountModel) { _ in }
+            addAccount.add(addAccountModel: addAccountModel) { result in
+                switch result {
+                case .failure: self.alertView.showMessage(viewModel: AlertViewModel(title: "Error", message: "Please try again later"))
+                case .success: break
+                }
+            }
         }
     }
     
