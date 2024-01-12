@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Presentation
 
 final class SignUpViewController: UIViewController {
 
@@ -59,3 +60,12 @@ final class SignUpViewController: UIViewController {
     }
 }
 
+extension SignUpViewController: LoadingView {
+    func showLoader(viewModel: Presentation.LoadingViewModel) {
+        if viewModel.isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
+}
