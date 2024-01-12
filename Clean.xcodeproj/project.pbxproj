@@ -19,6 +19,7 @@
 		A902CC342A9BDBE600C3858F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC332A9BDBE600C3858F /* Model.swift */; };
 		A902CC362A9BDC8100C3858F /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC352A9BDC8100C3858F /* RemoteAddAccount.swift */; };
 		A902CC382A9BDE2D00C3858F /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902CC372A9BDE2D00C3858F /* HttpPostClient.swift */; };
+		A91097452B513C8E00747B71 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91097442B513C8E00747B71 /* SignUpViewController.swift */; };
 		A93B58C82B19BCF300526D37 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF52AA0697300F9DAFE /* AccountModelFactory.swift */; };
 		A93B58C92B19D6B500526D37 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */; };
 		A93B58CB2B19E32100526D37 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93B58CA2B19E32100526D37 /* LoadingView.swift */; };
@@ -220,6 +221,7 @@
 		A902CC332A9BDBE600C3858F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A902CC352A9BDC8100C3858F /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		A902CC372A9BDE2D00C3858F /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		A91097442B513C8E00747B71 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A93B58CA2B19E32100526D37 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A93B58CD2B1A2C8C00526D37 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A93B58CF2B1A351000526D37 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				A9ECD14A2B512B9D0018D83A /* UI.docc */,
+				A91097442B513C8E00747B71 /* SignUpViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1136,6 +1139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91097452B513C8E00747B71 /* SignUpViewController.swift in Sources */,
 				A9ECD14B2B512B9D0018D83A /* UI.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1873,6 +1877,7 @@
 		A9ECD15A2B512B9D0018D83A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1895,6 +1900,7 @@
 		A9ECD15B2B512B9D0018D83A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
