@@ -29,6 +29,7 @@
 		A9051B202B52AF3700D61C6F /* EmailValidatorAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9051B1F2B52AF3700D61C6F /* EmailValidatorAdapterTest.swift */; };
 		A9051B282B52BADC00D61C6F /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A96983BD2AE7C961001F8DA7 /* Presentation.framework */; };
 		A9051B292B52BADC00D61C6F /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A96983BD2AE7C961001F8DA7 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A9051B2E2B52C39E00D61C6F /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9051B2D2B52C39E00D61C6F /* EmailValidatorAdapter.swift */; };
 		A91097452B513C8E00747B71 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91097442B513C8E00747B71 /* SignUpViewController.swift */; };
 		A93B58C82B19BCF300526D37 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CF52AA0697300F9DAFE /* AccountModelFactory.swift */; };
 		A93B58C92B19D6B500526D37 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B2CEE2AA0680800F9DAFE /* TestExtensions.swift */; };
@@ -264,6 +265,7 @@
 		A9051B142B52AF3700D61C6F /* Validation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Validation.docc; sourceTree = "<group>"; };
 		A9051B1A2B52AF3700D61C6F /* ValidationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9051B1F2B52AF3700D61C6F /* EmailValidatorAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterTest.swift; sourceTree = "<group>"; };
+		A9051B2D2B52C39E00D61C6F /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
 		A91097442B513C8E00747B71 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A93B58CA2B19E32100526D37 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A93B58CD2B1A2C8C00526D37 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				A9051B142B52AF3700D61C6F /* Validation.docc */,
+				A9051B2D2B52C39E00D61C6F /* EmailValidatorAdapter.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -1281,6 +1284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9051B152B52AF3700D61C6F /* Validation.docc in Sources */,
+				A9051B2E2B52C39E00D61C6F /* EmailValidatorAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1829,6 +1833,7 @@
 		A9051B262B52AF3700D61C6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1851,6 +1856,7 @@
 		A9051B272B52AF3700D61C6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
